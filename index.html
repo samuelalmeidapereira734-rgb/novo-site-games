@@ -1,269 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NG NovoGames — Jogos para download</title>
+<meta name="description" content="NovoGames — catálogo de jogos para Android com informações e links de download.">
 
-  <title>NovoGames — Jogos para download</title>
-
-  <!-- Google AdSense -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1856545229226807"
-    crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="style.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1856545229226807" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-  <div class="logo">🎮 NG <span>NovoGames</span></div>
-
-  <input
-    type="text"
-    id="search"
-    placeholder="Pesquisar jogos..."
-  >
-
-  <button id="themeBtn">🌙</button>
+<header class="topbar">
+  <a class="logo" href="#inicio">🎮 NG NovoGames</a>
+  <div class="tools">
+    <input id="search" class="search" type="search" placeholder="Buscar jogos..." aria-label="Buscar jogos">
+    <button id="theme" class="theme" type="button" aria-label="Alternar tema">☀️</button>
+  </div>
 </header>
 
-<nav>
-  <button onclick="filterGames('todos')">Todos</button>
-  <button onclick="filterGames('futebol')">Futebol</button>
-  <button onclick="filterGames('mundo')">Mundo aberto</button>
-  <button onclick="filterGames('carros')">Carros</button>
+<nav class="nav">
+  <a href="#inicio">Início</a>
+  <a href="#jogos">Jogos</a>
+  <a href="#categorias">Categorias</a>
 </nav>
 
-<main>
+<main id="inicio" class="container">
+  <div class="ad-slot"><b>PUBLICIDADE</b><span>Espaço reservado para anúncio</span></div>
 
   <section class="hero">
+    <span class="tag">PORTAL DE JOGOS</span>
     <h1>Jogos para download em um só lugar</h1>
-    <p>Encontre seus jogos favoritos no NovoGames.</p>
+    <p>Encontre jogos, informações e links para páginas de download.</p>
+    <a class="primary" href="#jogos">Ver jogos</a>
   </section>
 
-  <div class="ad">
-    <span>PUBLICIDADE</span>
-  </div>
+  <div class="ad-slot wide"><b>PUBLICIDADE</b><span>Espaço de anúncio responsivo</span></div>
 
-  <section>
-    <h2>🎮 Jogos disponíveis</h2>
+  <section id="jogos" class="section">
+    <div class="section-head">
+      <div><span class="eyebrow">CATÁLOGO</span><h2>🎮 Jogos em destaque</h2></div>
+      <span id="count" class="count">6 jogos</span>
+    </div>
+    <div id="grid" class="grid"></div>
+  </section>
 
-    <div class="games" id="games">
-
-      <article class="game" data-category="futebol">
-        <img src="images/jogo-1.jpg">
-        <h3>DFL 2026</h3>
-        <p>Jogo de futebol para Android com foco em partidas offline.</p>
-        <button onclick="openGame(0)">Ver jogo</button>
-      </article>
-
-      <article class="game" data-category="mundo">
-        <img src="images/jogo-2.jpg">
-        <h3>GTA MOTOVLOG</h3>
-        <p>Experiência de mundo aberto com motos, veículos e exploração.</p>
-        <button onclick="openGame(1)">Ver jogo</button>
-      </article>
-
-      <article class="game" data-category="mundo">
-        <img src="images/jogo-3.jpg">
-        <h3>JOGO DE MUNDO ABERTO</h3>
-        <p>Mundo aberto com veículos, personagens e exploração livre.</p>
-        <button onclick="openGame(2)">Ver jogo</button>
-      </article>
-
-      <article class="game" data-category="futebol">
-        <img src="images/jogo-4.jpg">
-        <h3>JOGO DE FUTSAL</h3>
-        <p>Jogo de futebol em quadra para partidas rápidas.</p>
-        <button onclick="openGame(3)">Ver jogo</button>
-      </article>
-
-      <article class="game" data-category="futebol">
-        <img src="images/jogo-5.jpg">
-        <h3>EAFC 2026</h3>
-        <p>Jogo de futebol com visual inspirado em EA SPORTS FC.</p>
-        <button onclick="openGame(4)">Ver jogo</button>
-      </article>
-
-      <article class="game" data-category="carros">
-        <img src="images/jogo-6.jpg">
-        <h3>JOGO DE CARRO REBAIXADO</h3>
-        <p>Jogo de carros com veículos modificados e estilo de rua.</p>
-        <button onclick="openGame(5)">Ver jogo</button>
-      </article>
-
+  <section id="categorias" class="section">
+    <span class="eyebrow">EXPLORE</span>
+    <h2>Categorias</h2>
+    <div class="categories">
+      <button class="active" data-filter="Todos">Todos</button>
+      <button data-filter="Futebol">⚽ Futebol</button>
+      <button data-filter="Mundo aberto">🌎 Mundo aberto</button>
+      <button data-filter="Carros">🚗 Carros</button>
     </div>
   </section>
 
-  <div class="ad">
-    <span>PUBLICIDADE</span>
-  </div>
-
+  <div class="ad-slot wide"><b>PUBLICIDADE</b><span>Espaço de anúncio responsivo</span></div>
 </main>
 
-<footer>
-  <p>© 2026 NovoGames — Todos os direitos reservados.</p>
-</footer>
-
-<div id="modal" class="modal">
+<div id="modal" class="modal" aria-hidden="true">
   <div class="modal-box">
+    <button id="close" class="close" type="button">×</button>
+    <h2 id="modalTitle">Abrir download</h2>
+    <p id="modalInfo"></p>
 
-    <button class="close" onclick="closeModal()">×</button>
-
-    <img id="modalImg">
-
-    <h2 id="modalTitle"></h2>
-    <p id="modalDescription"></p>
-
-    <div class="ad">
-      <span>PUBLICIDADE</span>
+    <div class="ad-slot modal-ad">
+      <b>PUBLICIDADE</b>
+      <span>Espaço reservado para anúncio</span>
     </div>
 
-    <p id="countdown">
-      Aguarde 10 segundos...
-    </p>
+    <p id="wait">Aguarde <strong id="seconds">10</strong> segundos...</p>
+    <div class="progress"><div id="bar"></div></div>
 
-    <a id="downloadBtn" class="download" target="_blank">
+    <a id="download" class="download disabled" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true">
       Continuar para a página de download
     </a>
-
-    <small>
-      O anúncio é separado do botão de download.
-      Não é necessário clicar em anúncios.
-    </small>
-
+    <p class="note">O anúncio é separado do botão de download. Não é necessário clicar em anúncios.</p>
   </div>
 </div>
 
+<footer>© 2026 NG NovoGames</footer>
+
 <script>
+const games = [["DFL 2026", "Futebol", "Android", "Jogo de futebol para Android com foco em partidas offline.", "images/jogo-1.jpg", "https://www.mediafire.com/file/lvwxo5nwccxe8yr/APK+FC26%E2%84%A2+ANDROID+OFFLINE+BY+ALPHATRIX+GAMING.zip/file"], ["GTA MOTOVLOG", "Mundo aberto", "Android", "Experiência de mundo aberto com motos, veículos e exploração.", "images/jogo-2.jpg", "https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1"], ["JOGO DE MUNDO ABERTO", "Mundo aberto", "Android", "Mundo aberto com veículos, personagens e exploração livre.", "images/jogo-3.jpg", "https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1"], ["JOGO DE FUTSAL", "Futebol", "Android", "Jogo de futebol em quadra para partidas rápidas.", "images/jogo-4.jpg", "https://www.mediafire.com/file_premium/lt86zuik9u2k842/eFootball_27_FernandoPlay_Bendezu_Beta.7z/file"], ["EAFC 2026", "Futebol", "Android", "Jogo de futebol com visual inspirado em EA SPORTS FC.", "images/jogo-5.jpg", "https://www.roberfl.com.br/2026/06/dfl-26-v40-free-premium.html?m=1"], ["JOGO DE CARRO REBAIXADO", "Carros", "Android", "Jogo de carros com veículos modificados e estilo de rua.", "images/jogo-6.jpg", "https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1"]];
+const grid = document.getElementById("grid");
+const search = document.getElementById("search");
+const count = document.getElementById("count");
+let filter = "Todos";
+let timer = null;
 
-const games = [
-  {
-    title: "DFL 2026",
-    description: "Jogo de futebol para Android com foco em partidas offline.",
-    image: "images/jogo-1.jpg",
-    link: "https://www.mediafire.com/file/lvwxo5nwccxe8yr/APK+FC26%E2%84%A2+ANDROID+OFFLINE+BY+ALPHATRIX+GAMING.zip/file"
-  },
-  {
-    title: "GTA MOTOVLOG",
-    description: "Experiência de mundo aberto com motos, veículos e exploração.",
-    image: "images/jogo-2.jpg",
-    link: "https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1"
-  },
-  {
-    title: "JOGO DE MUNDO ABERTO",
-    description: "Mundo aberto com veículos, personagens e exploração livre.",
-    image: "images/jogo-3.jpg",
-    link: "https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1"
-  },
-  {
-    title: "JOGO DE FUTSAL",
-    description: "Jogo de futebol em quadra para partidas rápidas.",
-    image: "images/jogo-4.jpg",
-    link: "https://www.mediafire.com/file_premium/lt86zuik9u2k842/eFootball_27_FernandoPlay_Bendezu_Beta.7z/file"
-  },
-  {
-    title: "EAFC 2026",
-    description: "Jogo de futebol com visual inspirado em EA SPORTS FC.",
-    image: "images/jogo-5.jpg",
-    link: "https://www.roberfl.com.br/2026/06/dfl-26-v40-free-premium.html?m=1"
-  },
-  {
-    title: "JOGO DE CARRO REBAIXADO",
-    description: "Jogo de carros com veículos modificados e estilo de rua.",
-    image: "images/jogo-6.jpg",
-    link: "https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1"
-  }
-];
+function render() {
+  const term = search.value.toLowerCase().trim();
+  const list = games.filter(g =>
+    (filter === "Todos" || g[1] === filter) &&
+    (g[0] + " " + g[1] + " " + g[3]).toLowerCase().includes(term)
+  );
+  count.textContent = list.length + (list.length === 1 ? " jogo" : " jogos");
+  grid.innerHTML = list.map((g, i) => `
+    <article class="card">
+      <img src="${g[4]}" alt="${g[0]}" loading="${i < 3 ? "eager" : "lazy"}">
+      <div class="body">
+        <div class="meta"><span>${g[1]}</span><span>${g[2]}</span></div>
+        <h3>${g[0]}</h3>
+        <p>${g[3]}</p>
+        <button class="details" type="button" data-index="${games.indexOf(g)}">Ver detalhes</button>
+      </div>
+      <div class="ad-slot card-ad"><b>PUBLICIDADE</b><span>Anúncio deste jogo</span></div>
+    </article>
+  `).join("") || '<div class="empty">Nenhum jogo encontrado.</div>';
 
-let timer;
+  document.querySelectorAll(".details").forEach(b =>
+    b.addEventListener("click", () => openModal(Number(b.dataset.index)))
+  );
+}
 
-function openGame(index) {
+function openModal(index) {
+  const g = games[index];
+  document.getElementById("modalTitle").textContent = g[0];
+  document.getElementById("modalInfo").textContent = g[3] + " • " + g[1] + " • " + g[2];
+  const link = document.getElementById("download");
+  link.href = g[5];
+  link.classList.add("disabled");
+  link.setAttribute("aria-disabled","true");
+  document.getElementById("modal").classList.add("show");
+  document.getElementById("modal").setAttribute("aria-hidden","false");
 
-  const game = games[index];
-
-  document.getElementById("modalImg").src = game.image;
-  document.getElementById("modalTitle").textContent = game.title;
-  document.getElementById("modalDescription").textContent = game.description;
-
-  const btn = document.getElementById("downloadBtn");
-
-  btn.removeAttribute("href");
-  btn.style.display = "none";
-
-  let seconds = 10;
-
-  document.getElementById("countdown").textContent =
-    "Aguarde " + seconds + " segundos...";
-
-  document.getElementById("modal").style.display = "flex";
-
+  let n = 10;
+  document.getElementById("seconds").textContent = n;
+  document.getElementById("bar").style.width = "0%";
   clearInterval(timer);
-
   timer = setInterval(() => {
-
-    seconds--;
-
-    document.getElementById("countdown").textContent =
-      "Aguarde " + seconds + " segundos...";
-
-    if (seconds <= 0) {
-
+    n--;
+    document.getElementById("seconds").textContent = n;
+    document.getElementById("bar").style.width = ((10-n)*10) + "%";
+    if (n <= 0) {
       clearInterval(timer);
-
-      btn.href = game.link;
-      btn.style.display = "inline-block";
-
-      document.getElementById("countdown").textContent =
-        "Download liberado!";
-
+      document.getElementById("wait").textContent = "Pronto! Você pode continuar.";
+      link.classList.remove("disabled");
+      link.removeAttribute("aria-disabled");
     }
-
   }, 1000);
 }
 
 function closeModal() {
-  document.getElementById("modal").style.display = "none";
   clearInterval(timer);
+  document.getElementById("modal").classList.remove("show");
+  document.getElementById("modal").setAttribute("aria-hidden","true");
 }
-
-function filterGames(category) {
-
-  document.querySelectorAll(".game").forEach(game => {
-
-    if (
-      category === "todos" ||
-      game.dataset.category === category
-    ) {
-      game.style.display = "block";
-    } else {
-      game.style.display = "none";
-    }
-
-  });
-}
-
-document.getElementById("search").addEventListener("input", function() {
-
-  const text = this.value.toLowerCase();
-
-  document.querySelectorAll(".game").forEach(game => {
-
-    game.style.display =
-      game.textContent.toLowerCase().includes(text)
-      ? "block"
-      : "none";
-
-  });
-
+document.getElementById("close").addEventListener("click", closeModal);
+document.getElementById("modal").addEventListener("click", e => {
+  if (e.target.id === "modal") closeModal();
 });
-
-document.getElementById("themeBtn").onclick = function() {
+search.addEventListener("input", render);
+document.querySelectorAll("[data-filter]").forEach(b => b.addEventListener("click", () => {
+  filter = b.dataset.filter;
+  document.querySelectorAll("[data-filter]").forEach(x => x.classList.toggle("active", x === b));
+  render();
+}));
+document.getElementById("theme").addEventListener("click", () => {
   document.body.classList.toggle("light");
-};
-
+  document.getElementById("theme").textContent = document.body.classList.contains("light") ? "🌙" : "☀️";
+});
+render();
 </script>
-
 </body>
 </html>
