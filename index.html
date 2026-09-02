@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novo Site Games — Downloads</title>
+  <meta name="description" content="Portal de jogos para download, notícias, tutoriais e avaliações.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="container nav">
+      <a class="logo" href="#"><span>NG</span> NovoGames</a>
+      <div class="busca"><input id="search" type="search" placeholder="Buscar jogos..."></div>
+      <nav>
+        <a class="ativo" href="#">Início</a>
+        <a href="#jogos">Jogos</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="tema" id="themeBtn" aria-label="Alternar tema">☾</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="tag">PORTAL DE JOGOS</span>
+        <h1>Jogos para download em um só lugar</h1>
+        <p>Encontre jogos, informações, requisitos e links de download oficiais em uma interface rápida e moderna.</p>
+        <a class="botao" href="#jogos">Ver jogos</a>
+      </div>
+    </section>
+
+    <div class="layout">
+      <section id="jogos">
+        <div class="titulo"><h2>Jogos em destaque</h2></div>
+        <div class="grid" id="gameGrid">
+          <article class="card" data-name="Aventura Galaxy">
+            <div class="thumb t1">🎮</div>
+            <div class="conteudo">
+              <span class="tag">AVENTURA</span><h3>Aventura Galaxy</h3>
+              <p>Explore mundos, complete missões e descubra novos desafios.</p>
+              <div class="meta">PC • 4,2 GB</div>
+              <a class="botao pequeno" href="#">Download</a>
+            </div>
+          </article>
+          <article class="card" data-name="Battle Arena">
+            <div class="thumb t2">⚔️</div>
+            <div class="conteudo">
+              <span class="tag">AÇÃO</span><h3>Battle Arena</h3>
+              <p>Partidas rápidas e competitivas com vários modos de jogo.</p>
+              <div class="meta">PC • 8,1 GB</div>
+              <a class="botao pequeno" href="#">Download</a>
+            </div>
+          </article>
+          <article class="card" data-name="Racing Turbo">
+            <div class="thumb t3">🏎️</div>
+            <div class="conteudo">
+              <span class="tag">CORRIDA</span><h3>Racing Turbo</h3>
+              <p>Corra em pistas incríveis e personalize seus veículos.</p>
+              <div class="meta">PC • 6,7 GB</div>
+              <a class="botao pequeno" href="#">Download</a>
+            </div>
+          </article>
+          <article class="card" data-name="Fantasy Quest">
+            <div class="thumb t4">🧙</div>
+            <div class="conteudo">
+              <span class="tag">RPG</span><h3>Fantasy Quest</h3>
+              <p>Uma jornada fantástica cheia de monstros, itens e missões.</p>
+              <div class="meta">PC • 12 GB</div>
+              <a class="botao pequeno" href="#">Download</a>
+            </div>
+          </article>
+          <article class="card" data-name="Cyber Strike">
+            <div class="thumb t5">🤖</div>
+            <div class="conteudo">
+              <span class="tag">AÇÃO</span><h3>Cyber Strike</h3>
+              <p>Combates futuristas em uma cidade dominada pela tecnologia.</p>
+              <div class="meta">PC • 9,5 GB</div>
+              <a class="botao pequeno" href="#">Download</a>
+            </div>
+          </article>
+          <article class="card" data-name="Football Stars">
+            <div class="thumb t6">⚽</div>
+            <div class="conteudo">
+              <span class="tag">ESPORTES</span><h3>Football Stars</h3>
+              <p>Monte seu time e dispute partidas emocionantes.</p>
+              <div class="meta">PC • 5,3 GB</div>
+              <a class="botao pequeno" href="#">Download</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <aside>
+        <div class="painel" id="categorias">
+          <h2>📁 Categorias</h2>
+          <a href="#">Ação <b>24</b></a><a href="#">Aventura <b>18</b></a>
+          <a href="#">RPG <b>15</b></a><a href="#">Corrida <b>12</b></a>
+          <a href="#">Esportes <b>10</b></a>
+        </div>
+        <div class="painel">
+          <h2>🔥 Mais baixados</h2>
+          <ol><li>Battle Arena</li><li>Aventura Galaxy</li><li>Football Stars</li><li>Racing Turbo</li><li>Fantasy Quest</li></ol>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="contato">
+    <div class="container footer-grid">
+      <div><h2>NG NovoGames</h2><p>Seu portal de jogos, downloads e informações.</p></div>
+      <div><h3>Navegação</h3><a href="#">Início</a><a href="#jogos">Jogos</a><a href="#categorias">Categorias</a></div>
+      <div><h3>Contato</h3><p>contato@novogames.com</p><p>© 2026 NovoGames</p></div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
