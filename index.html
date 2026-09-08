@@ -1,22 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novo Games 7</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px 10px;
+            background: #1b1b1b;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .jogos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .jogo {
+            background: #222;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .jogo img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .jogo h2 {
+            padding: 0 15px;
+        }
+
+        .jogo p {
+            padding: 0 15px 15px;
+            color: #bbb;
+        }
+
+        .botao {
+            display: block;
+            margin: 15px;
+            padding: 12px;
+            background: #168bd3;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .jogos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
-<body style="background: #111; color: white; font-family: Arial; text-align: center; padding: 50px;">
+<body>
 
-    <h1>🎮 NOVO GAMES 7</h1>
+<header>
+    <h1>🎮 Novo Games 7</h1>
+    <p>Os melhores jogos para celular</p>
+</header>
 
-    <h2>TESTE DO SITE</h2>
+<div class="container">
 
-    <p>Se você está vendo esta mensagem, o site está funcionando corretamente!</p>
+    <h2>🔥 Jogos em destaque</h2>
 
-    <p>✅ GitHub funcionando</p>
-    <p>✅ Cloudflare funcionando</p>
-    <p>✅ HTML funcionando</p>
+    <div class="jogos">
+
+        <div class="jogo">
+            <img src="jogo-1.jpg" alt="Jogo 1">
+            <h2>DFL 2026</h2>
+            <p>Confira este jogo para celular.</p>
+            <a class="botao" href="#">Ver jogo</a>
+        </div>
+
+        <div class="jogo">
+            <img src="jogo-2.jpg" alt="Jogo 2">
+            <h2>GTA Motovlog</h2>
+            <p>Confira este jogo para celular.</p>
+            <a class="botao" href="#">Ver jogo</a>
+        </div>
+
+        <div class="jogo">
+            <img src="jogo-3.jpg" alt="Jogo 3">
+            <h2>Jogo 3</h2>
+            <p>Confira este jogo para celular.</p>
+            <a class="botao" href="#">Ver jogo</a>
+        </div>
+
+        <div class="jogo">
+            <img src="jogo-4.jpg" alt="Jogo 4">
+            <h2>Jogo 4</h2>
+            <p>Confira este jogo para celular.</p>
+            <a class="botao" href="#">Ver jogo</a>
+        </div>
+
+        <div class="jogo">
+            <img src="jogo-5.jpg" alt="Jogo 5">
+            <h2>Jogo 5</h2>
+            <p>Confira este jogo para celular.</p>
+            <a class="botao" href="#">Ver jogo</a>
+        </div>
+
+        <div class="jogo">
+            <img src="jogo-6.jpg" alt="Jogo 6">
+            <h2>Jogo 6</h2>
+            <p>Confira este jogo para celular.</p>
+            <a class="botao" href="#">Ver jogo</a>
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
