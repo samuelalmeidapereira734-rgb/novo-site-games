@@ -1,33 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo Games 7</title>
+
+    <title>Novo Games 7 - Jogos Mobile</title>
+
+    <meta name="description" content="Novo Games 7 - Jogos para celular, novidades e downloads.">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            background: #111;
-            color: white;
-            font-family: Arial, sans-serif;
+            background: #0b1118;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         header {
+            background: #151e28;
+            padding: 25px 15px;
             text-align: center;
-            padding: 25px 10px;
-            background: #1b1b1b;
+            border-bottom: 1px solid #293746;
         }
 
-        h1 {
+        header h1 {
             margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            color: #aebbc8;
+            margin: 8px 0 0;
         }
 
         .container {
-            max-width: 1000px;
+            width: 94%;
+            max-width: 1100px;
             margin: auto;
-            padding: 20px;
+            padding-bottom: 40px;
+        }
+
+        .titulo {
+            margin: 30px 0 20px;
+            font-size: 25px;
+        }
+
+        /* ESPAÇO DE ANÚNCIO */
+        .anuncio {
+            width: 100%;
+            min-height: 100px;
+            margin: 22px 0;
+            background: #121b24;
+            border: 1px dashed #536474;
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #788897;
+            text-align: center;
+            font-size: 13px;
         }
 
         .jogos {
@@ -37,41 +74,136 @@
         }
 
         .jogo {
-            background: #222;
-            border-radius: 12px;
+            background: #151f29;
+            border: 1px solid #293847;
+            border-radius: 14px;
             overflow: hidden;
         }
 
         .jogo img {
             width: 100%;
-            height: 230px;
+            height: 240px;
             object-fit: cover;
             display: block;
+            background: #202c37;
         }
 
-        .jogo h2 {
-            padding: 0 15px;
+        .conteudo {
+            padding: 17px;
         }
 
-        .jogo p {
-            padding: 0 15px 15px;
-            color: #bbb;
+        .conteudo h2 {
+            margin: 0 0 10px;
+            font-size: 21px;
+        }
+
+        .conteudo p {
+            margin: 0;
+            color: #aebbc8;
+            line-height: 1.5;
+            font-size: 14px;
         }
 
         .botao {
             display: block;
-            margin: 15px;
-            padding: 12px;
+            width: 100%;
+            margin-top: 17px;
+            padding: 13px;
+
             background: #168bd3;
             color: white;
+
             text-align: center;
             text-decoration: none;
+
             border-radius: 8px;
+            font-weight: bold;
         }
 
-        @media (max-width: 600px) {
+        .botao:hover {
+            opacity: 0.85;
+        }
+
+        footer {
+            background: #151e28;
+            text-align: center;
+            padding: 30px 15px;
+            color: #81909f;
+        }
+
+        /* =========================
+           PÁGINA DE ESPERA
+        ========================= */
+
+        #paginaEspera {
+            display: none;
+            min-height: 100vh;
+            padding: 25px 15px;
+        }
+
+        .espera {
+            width: 100%;
+            max-width: 650px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .espera h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .espera p {
+            color: #aebbc8;
+            line-height: 1.5;
+        }
+
+        .contador {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 25px 0;
+        }
+
+        .botaoDownload {
+            display: none;
+
+            width: 100%;
+            padding: 16px;
+
+            background: #168bd3;
+            color: white;
+
+            text-decoration: none;
+            text-align: center;
+
+            border-radius: 9px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 20px;
+            color: #9db1c3;
+            text-decoration: none;
+        }
+
+        @media (max-width: 650px) {
+
             .jogos {
                 grid-template-columns: 1fr;
+            }
+
+            .jogo img {
+                height: 230px;
+            }
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            .contador {
+                font-size: 45px;
             }
         }
     </style>
@@ -79,62 +211,325 @@
 
 <body>
 
-<header>
-    <h1>🎮 Novo Games 7</h1>
-    <p>Os melhores jogos para celular</p>
-</header>
+<!-- =========================
+     PÁGINA PRINCIPAL
+========================= -->
 
-<div class="container">
+<div id="paginaPrincipal">
 
-    <h2>🔥 Jogos em destaque</h2>
+    <header>
+        <h1>🎮 Novo Games 7</h1>
+        <p>Os melhores jogos para celular</p>
+    </header>
 
-    <div class="jogos">
+    <main class="container">
 
-        <div class="jogo">
-            <img src="jogo-1.jpg" alt="Jogo 1">
-            <h2>DFL 2026</h2>
-            <p>Confira este jogo para celular.</p>
-            <a class="botao" href="#">Ver jogo</a>
+        <h2 class="titulo">🔥 Jogos em destaque</h2>
+
+        <!-- ANÚNCIO -->
+        <div class="anuncio">
+            ESPAÇO PARA ANÚNCIO
         </div>
 
-        <div class="jogo">
-            <img src="jogo-2.jpg" alt="Jogo 2">
-            <h2>GTA Motovlog</h2>
-            <p>Confira este jogo para celular.</p>
-            <a class="botao" href="#">Ver jogo</a>
+
+        <div class="jogos">
+
+            <!-- JOGO 1 -->
+
+            <div class="jogo">
+
+                <img src="jogo-1.jpg" alt="DFL 2026">
+
+                <div class="conteudo">
+
+                    <h2>DFL 2026</h2>
+
+                    <p>
+                        Jogo de futebol para Android.
+                    </p>
+
+                    <a class="botao"
+                       href="#"
+                       onclick="abrirEspera('DFL 2026','https://www.mediafire.com/file/lvwxo5nwccxe8yr/APK+FC26%E2%84%A2+ANDROID+OFFLINE+BY+ALPHATRIX+GAMING.zip/file'); return false;">
+                        🎮 Ver jogo
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- JOGO 2 -->
+
+            <div class="jogo">
+
+                <img src="jogo-2.jpg" alt="GTA Motovlog">
+
+                <div class="conteudo">
+
+                    <h2>GTA Motovlog</h2>
+
+                    <p>
+                        Mundo aberto com motos e veículos.
+                    </p>
+
+                    <a class="botao"
+                       href="#"
+                       onclick="abrirEspera('GTA Motovlog','https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1'); return false;">
+                        🎮 Ver jogo
+                    </a>
+
+                </div>
+            </div>
+
         </div>
 
-        <div class="jogo">
-            <img src="jogo-3.jpg" alt="Jogo 3">
-            <h2>Jogo 3</h2>
-            <p>Confira este jogo para celular.</p>
-            <a class="botao" href="#">Ver jogo</a>
+
+        <!-- ANÚNCIO -->
+
+        <div class="anuncio">
+            ESPAÇO PARA ANÚNCIO
         </div>
 
-        <div class="jogo">
-            <img src="jogo-4.jpg" alt="Jogo 4">
-            <h2>Jogo 4</h2>
-            <p>Confira este jogo para celular.</p>
-            <a class="botao" href="#">Ver jogo</a>
+
+        <div class="jogos">
+
+            <!-- JOGO 3 -->
+
+            <div class="jogo">
+
+                <img src="jogo-3.jpg" alt="Jogo de Mundo Aberto">
+
+                <div class="conteudo">
+
+                    <h2>Jogo de Mundo Aberto</h2>
+
+                    <p>
+                        Explore o mapa e descubra novas aventuras.
+                    </p>
+
+                    <a class="botao"
+                       href="#"
+                       onclick="abrirEspera('Jogo de Mundo Aberto','https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1'); return false;">
+                        🎮 Ver jogo
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- JOGO 4 -->
+
+            <div class="jogo">
+
+                <img src="jogo-4.jpg" alt="Jogo de Futsal 2026">
+
+                <div class="conteudo">
+
+                    <h2>Jogo de Futsal 2026</h2>
+
+                    <p>
+                        Futebol mobile para Android.
+                    </p>
+
+                    <a class="botao"
+                       href="#"
+                       onclick="abrirEspera('Jogo de Futsal 2026','https://www.mediafire.com/file_premium/lt86zuik9u2k842/eFootball_27_FernandoPlay_Bendezu_Beta.7z/file'); return false;">
+                        🎮 Ver jogo
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- JOGO 5 -->
+
+            <div class="jogo">
+
+                <img src="jogo-5.jpg" alt="EAFC 2026 Android">
+
+                <div class="conteudo">
+
+                    <h2>EAFC 2026 Android</h2>
+
+                    <p>
+                        Jogo de futebol para Android.
+                    </p>
+
+                    <a class="botao"
+                       href="#"
+                       onclick="abrirEspera('EAFC 2026 Android','https://www.mediafire.com/file/lvwxo5nwccxe8yr/APK+FC26%E2%84%A2+ANDROID+OFFLINE+BY+ALPHATRIX+GAMING.zip/file'); return false;">
+                        🎮 Ver jogo
+                    </a>
+
+                </div>
+            </div>
+
+
+            <!-- JOGO 6 -->
+
+            <div class="jogo">
+
+                <img src="jogo-6.jpg" alt="Jogo de Carro Rebaixado">
+
+                <div class="conteudo">
+
+                    <h2>Jogo de Carro Rebaixado</h2>
+
+                    <p>
+                        Carros, personalização e mundo aberto.
+                    </p>
+
+                    <a class="botao"
+                       href="#"
+                       onclick="abrirEspera('Jogo de Carro Rebaixado','https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1'); return false;">
+                        🎮 Ver jogo
+                    </a>
+
+                </div>
+            </div>
+
         </div>
 
-        <div class="jogo">
-            <img src="jogo-5.jpg" alt="Jogo 5">
-            <h2>Jogo 5</h2>
-            <p>Confira este jogo para celular.</p>
-            <a class="botao" href="#">Ver jogo</a>
+
+        <!-- ANÚNCIO FINAL -->
+
+        <div class="anuncio">
+            ESPAÇO PARA ANÚNCIO
         </div>
 
-        <div class="jogo">
-            <img src="jogo-6.jpg" alt="Jogo 6">
-            <h2>Jogo 6</h2>
-            <p>Confira este jogo para celular.</p>
-            <a class="botao" href="#">Ver jogo</a>
+    </main>
+
+
+    <footer>
+        © 2026 Novo Games 7
+    </footer>
+
+</div>
+
+
+<!-- =========================
+     PÁGINA DE ESPERA
+========================= -->
+
+<div id="paginaEspera">
+
+    <div class="espera">
+
+        <h1>🎮 <span id="nomeJogo">Novo Games 7</span></h1>
+
+        <p>
+            Seu download está sendo preparado.
+            Aguarde alguns segundos.
+        </p>
+
+
+        <!-- ANÚNCIO DA PÁGINA DE ESPERA -->
+
+        <div class="anuncio">
+            ESPAÇO PARA ANÚNCIO
         </div>
+
+
+        <p>
+            Aguarde:
+        </p>
+
+        <div class="contador" id="contador">
+            10
+        </div>
+
+
+        <a id="botaoDownload"
+           class="botaoDownload"
+           href="#"
+           target="_blank"
+           rel="noopener noreferrer">
+            ⬇️ CONTINUAR PARA O JOGO
+        </a>
+
+
+        <a class="voltar"
+           href="#"
+           onclick="voltarInicio(); return false;">
+            ← Voltar para os jogos
+        </a>
 
     </div>
 
 </div>
+
+
+<script>
+
+    let linkAtual = "";
+    let intervalo = null;
+
+
+    function abrirEspera(nome, link) {
+
+        linkAtual = link;
+
+        document.getElementById("nomeJogo").textContent = nome;
+
+        document.getElementById("paginaPrincipal").style.display = "none";
+
+        document.getElementById("paginaEspera").style.display = "block";
+
+        document.getElementById("botaoDownload").style.display = "none";
+
+        let contador = 10;
+
+        document.getElementById("contador").textContent = contador;
+
+        window.scrollTo(0, 0);
+
+
+        if (intervalo) {
+            clearInterval(intervalo);
+        }
+
+
+        intervalo = setInterval(function() {
+
+            contador--;
+
+            document.getElementById("contador").textContent = contador;
+
+
+            if (contador <= 0) {
+
+                clearInterval(intervalo);
+
+                document.getElementById("contador").textContent = "✓";
+
+                let botao = document.getElementById("botaoDownload");
+
+                botao.href = linkAtual;
+
+                botao.style.display = "block";
+
+            }
+
+        }, 1000);
+
+    }
+
+
+    function voltarInicio() {
+
+        if (intervalo) {
+            clearInterval(intervalo);
+        }
+
+        document.getElementById("paginaEspera").style.display = "none";
+
+        document.getElementById("paginaPrincipal").style.display = "block";
+
+        window.scrollTo(0, 0);
+
+    }
+
+</script>
 
 </body>
 </html>
