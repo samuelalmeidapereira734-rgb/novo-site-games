@@ -1,796 +1,183 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Novo Games 7</title>
-
-<meta name="description" content="Novo Games 7 - jogos para celular Android, novidades e conteúdos sobre jogos mobile.">
-
-<style>
-*{
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    background:#080b12;
-    color:#fff;
-    font-family:Arial,Helvetica,sans-serif;
-    line-height:1.6;
-}
-
-/* CABEÇALHO */
-header{
-    text-align:center;
-    padding:20px 12px;
-    background:linear-gradient(180deg,#101a30,#080b12);
-}
-
-/* LOGO */
-.logo{
-    width:150px;
-    height:150px;
-    margin:auto;
-    border-radius:50%;
-    background:radial-gradient(circle,#193d72 0%,#07101f 70%);
-    border:5px solid #00aaff;
-    box-shadow:0 0 25px #008cff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    position:relative;
-}
-
-.crown{
-    font-size:28px;
-    position:absolute;
-    top:5px;
-}
-
-.controller{
-    font-size:42px;
-    margin-top:15px;
-}
-
-.logo h1{
-    font-size:17px;
-    margin:2px 0;
-    text-shadow:0 0 8px #00aaff;
-}
-
-.logo p{
-    font-size:7px;
-    margin:2px;
-    color:#00c8ff;
-    font-weight:bold;
-}
-
-.titulo{
-    font-size:28px;
-    margin:15px 0 5px;
-    text-shadow:0 0 10px #009dff;
-}
-
-.subtitulo{
-    color:#aaa;
-    font-size:14px;
-}
-
-/* MENU */
-nav{
-    width:94%;
-    max-width:900px;
-    margin:15px auto;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
-}
-
-nav a{
-    color:#fff;
-    text-decoration:none;
-    background:#121c2d;
-    border:1px solid #29415f;
-    padding:8px 12px;
-    border-radius:8px;
-    font-size:13px;
-}
-
-nav a:hover{
-    background:#006cff;
-}
-
-/* ANÚNCIOS */
-.anuncio{
-    width:94%;
-    max-width:728px;
-    min-height:90px;
-    margin:18px auto;
-    border:1px dashed #555;
-    background:#11151d;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#777;
-    font-size:13px;
-    text-align:center;
-}
-
-/* JOGOS */
-.jogos{
-    width:94%;
-    max-width:900px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:14px;
-}
-
-.jogo{
-    background:#111722;
-    border-radius:14px;
-    overflow:hidden;
-    border:1px solid #26344a;
-    box-shadow:0 5px 18px #000;
-}
-
-.jogo img{
-    width:100%;
-    height:150px;
-    object-fit:cover;
-    display:block;
-}
-
-.jogo h2{
-    font-size:16px;
-    margin:10px;
-}
-
-.botao{
-    display:block;
-    text-align:center;
-    text-decoration:none;
-    color:white;
-    background:linear-gradient(90deg,#0066ff,#00b7ff);
-    padding:12px;
-    margin:10px;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-.botao:active{
-    transform:scale(.97);
-}
-
-/* SEÇÕES */
-.secao{
-    width:94%;
-    max-width:900px;
-    margin:35px auto;
-    padding:22px;
-    background:#111722;
-    border:1px solid #26344a;
-    border-radius:14px;
-}
-
-.secao h2{
-    color:#00b7ff;
-    margin-top:0;
-}
-
-.secao h3{
-    color:#ddd;
-}
-
-.secao p,
-.secao li{
-    color:#ccc;
-}
-
-/* CONTATO */
-.contato-box{
-    background:#080d16;
-    padding:15px;
-    border-radius:10px;
-    border:1px solid #25354d;
-}
-
-.email{
-    color:#00b7ff;
-    font-weight:bold;
-    font-size:17px;
-}
-
-/* TELA DE ESPERA */
-#espera{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:#070a10;
-    z-index:9999;
-    text-align:center;
-    padding:30px 15px;
-}
-
-.caixa{
-    max-width:420px;
-    margin:80px auto;
-    background:#111722;
-    padding:25px;
-    border-radius:18px;
-    border:1px solid #263b58;
-    box-shadow:0 0 30px #006cff55;
-}
-
-.caixa h2{
-    color:#00b7ff;
-}
-
-#contador{
-    font-size:48px;
-    font-weight:bold;
-    margin:20px;
-}
-
-.continuar{
-    display:none;
-    background:#00a651;
-    color:white;
-    padding:15px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.voltar{
-    display:block;
-    margin-top:20px;
-    color:#aaa;
-    text-decoration:none;
-}
-
-/* RODAPÉ */
-footer{
-    margin-top:40px;
-    padding:30px 15px;
-    text-align:center;
-    background:#05070c;
-    border-top:1px solid #202b3b;
-}
-
-footer a{
-    color:#00b7ff;
-    text-decoration:none;
-    margin:0 7px;
-    font-size:13px;
-}
-
-footer p{
-    color:#777;
-    font-size:12px;
-}
-
-/* CELULAR */
-@media(max-width:500px){
-
-    .jogos{
-        grid-template-columns:1fr;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preparando seu jogo | Zika Games 7</title>
+  <meta name="description" content="Aguarde alguns segundos enquanto preparamos seu jogo no Zika Games 7.">
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    .jogo img{
-        height:190px;
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: radial-gradient(circle at top, #102b49, #05080e 70%);
+      color: #fff;
+      font-family: Arial, sans-serif;
     }
 
-    .titulo{
-        font-size:24px;
+    .container {
+      width: 100%;
+      max-width: 520px;
+      text-align: center;
+      padding: 28px 20px;
+      background: #101c2c;
+      border: 1px solid #168bff;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #087bff55;
     }
 
-    .secao{
-        padding:18px;
+    h1 {
+      color: #16c8ff;
+      font-size: 27px;
+      margin: 0 0 15px;
     }
 
-    nav a{
-        font-size:12px;
+    .subtitle {
+      font-size: 17px;
+      color: #ddd;
+      margin-bottom: 20px;
     }
-}
-</style>
+
+    .ad-space {
+      width: 100%;
+      min-height: 120px;
+      margin: 22px auto;
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border: 2px dashed #536579;
+      border-radius: 12px;
+      background: #0a1320;
+      color: #aebdce;
+    }
+
+    .ad-space strong {
+      color: #ffd166;
+      font-size: 14px;
+    }
+
+    .ad-space span {
+      font-size: 13px;
+    }
+
+    #contador {
+      font-size: 68px;
+      font-weight: bold;
+      color: #fff;
+      margin: 20px 0;
+    }
+
+    .progress {
+      height: 8px;
+      background: #26384c;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: #16c8ff;
+      transition: width 1s linear;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 12px;
+      color: #b9dfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back:hover {
+      color: #16c8ff;
+    }
+
+    .notice {
+      color: #aebdce;
+      font-size: 12px;
+      margin-top: 18px;
+    }
+  </style>
 </head>
 
 <body>
+  <main class="container">
+    <h1>🎮 PREPARANDO SEU JOGO</h1>
+    <p class="subtitle">Aguarde alguns segundos...</p>
 
-<!-- CABEÇALHO -->
-<header>
-
-    <div class="logo">
-
-        <div class="crown">👑</div>
-
-        <div class="controller">🎮</div>
-
-        <h1>NOVO GAMES 7</h1>
-
-        <p>JOGOS PARA CELULAR</p>
-
+    <div class="ad-space">
+      <strong>📢 ESPAÇO PARA ANÚNCIO</strong>
+      <span>Área reservada para publicidade</span>
     </div>
 
-    <div class="titulo">
-        🎮 NOVO GAMES 7
+    <div id="contador">10</div>
+
+    <div class="progress">
+      <div class="progress-bar" id="barra"></div>
     </div>
 
-    <div class="subtitulo">
-        Os melhores jogos para Android
-    </div>
-
-</header>
-
-
-<!-- MENU -->
-<nav>
-
-    <a href="#inicio">🏠 Início</a>
-
-    <a href="#jogos">🎮 Jogos</a>
-
-    <a href="#sobre">ℹ️ Sobre Nós</a>
-
-    <a href="#contato">📩 Contato</a>
-
-    <a href="#privacidade">🔒 Privacidade</a>
-
-    <a href="#termos">📜 Termos</a>
-
-</nav>
-
-
-<div id="inicio"></div>
-
-
-<!-- ANÚNCIO -->
-<div class="anuncio">
-    ESPAÇO PARA ANÚNCIO
-</div>
-
-
-<!-- JOGOS -->
-<section id="jogos">
-
-<div class="jogos">
-
-    <!-- JOGO 1 -->
-    <div class="jogo">
-
-        <img src="jogo-1.jpg" alt="DFL 2026">
-
-        <h2>⚽ DFL 2026</h2>
-
-        <a class="botao"
-        href="#"
-        onclick="abrirJogo('https://www.mediafire.com/file/lvwxo5nwccxe8yr/APK+FC26%E2%84%A2+ANDROID+OFFLINE+BY+ALPHATRIX+GAMING.zip/file')">
-
-        VER JOGO
-
-        </a>
-
-    </div>
-
-
-    <!-- JOGO 2 -->
-    <div class="jogo">
-
-        <img src="jogo-2.jpg" alt="GTA Motovlog">
-
-        <h2>🏍️ GTA Motovlog</h2>
-
-        <a class="botao"
-        href="#"
-        onclick="abrirJogo('https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1')">
-
-        VER JOGO
-
-        </a>
-
-    </div>
-
-
-    <!-- JOGO 3 -->
-    <div class="jogo">
-
-        <img src="jogo-3.jpg" alt="Jogo de Mundo Aberto">
-
-        <h2>🌎 Mundo Aberto</h2>
-
-        <a class="botao"
-        href="#"
-        onclick="abrirJogo('https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1')">
-
-        VER JOGO
-
-        </a>
-
-    </div>
-
-
-    <!-- JOGO 4 -->
-    <div class="jogo">
-
-        <img src="jogo-4.jpg" alt="Futsal 2026">
-
-        <h2>⚽ Futsal 2026</h2>
-
-        <a class="botao"
-        href="#"
-        onclick="abrirJogo('https://www.mediafire.com/file_premium/lt86zuik9u2k842/eFootball_27_FernandoPlay_Bendezu_Beta.7z/file')">
-
-        VER JOGO
-
-        </a>
-
-    </div>
-
-
-    <!-- JOGO 5 -->
-    <div class="jogo">
-
-        <img src="jogo-5.jpg" alt="EAFC 2026 Android">
-
-        <h2>🔥 EAFC 2026 Android</h2>
-
-        <a class="botao"
-        href="#"
-        onclick="abrirJogo('https://www.mediafire.com/file/lvwxo5nwccxe8yr/APK+FC26%E2%84%A2+ANDROID+OFFLINE+BY+ALPHATRIX+GAMING.zip/file')">
-
-        VER JOGO
-
-        </a>
-
-    </div>
-
-
-    <!-- JOGO 6 -->
-    <div class="jogo">
-
-        <img src="jogo-6.jpg" alt="Carro Rebaixado">
-
-        <h2>🚗 Carro Rebaixado</h2>
-
-        <a class="botao"
-        href="#"
-        onclick="abrirJogo('https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1')">
-
-        VER JOGO
-
-        </a>
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- ANÚNCIO -->
-<div class="anuncio">
-    ESPAÇO PARA ANÚNCIO
-</div>
-
-
-<!-- SOBRE NÓS -->
-<section class="secao" id="sobre">
-
-<h2>ℹ️ Sobre Nós</h2>
-
-<p>
-Bem-vindo ao <strong>Novo Games 7</strong>, um site dedicado aos fãs de jogos para celular.
-</p>
-
-<p>
-Nosso objetivo é reunir informações, novidades e conteúdos relacionados ao mundo dos jogos mobile,
-facilitando a navegação dos usuários e apresentando conteúdos interessantes sobre jogos para Android.
-</p>
-
-<p>
-Estamos trabalhando continuamente para melhorar o site, adicionar novos conteúdos e oferecer
-uma experiência simples e agradável para nossos visitantes.
-</p>
-
-</section>
-
-
-<!-- CONTATO -->
-<section class="secao" id="contato">
-
-<h2>📩 Contato</h2>
-
-<p>
-Tem alguma dúvida, sugestão, correção ou deseja entrar em contato com a equipe do Novo Games 7?
-</p>
-
-<div class="contato-box">
-
-<p>
-📧 E-mail de contato:
-</p>
-
-<p class="email">
-blogtech.info6@gmail.com
-</p>
-
-<p>
-Utilize este endereço para assuntos relacionados ao site.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- POLÍTICA DE PRIVACIDADE -->
-<section class="secao" id="privacidade">
-
-<h2>🔒 Política de Privacidade</h2>
-
-<p>
-A privacidade dos nossos visitantes é importante para nós.
-Esta Política de Privacidade explica de forma geral como as informações podem ser utilizadas
-durante a navegação no Novo Games 7.
-</p>
-
-<h3>1. Informações coletadas</h3>
-
-<p>
-Durante a utilização do site, algumas informações técnicas podem ser coletadas automaticamente,
-como tipo de dispositivo, navegador, páginas acessadas e informações relacionadas à navegação.
-</p>
-
-<h3>2. Cookies</h3>
-
-<p>
-O Novo Games 7 pode utilizar cookies e tecnologias semelhantes para melhorar a experiência
-do usuário, analisar o funcionamento do site e, quando aplicável, disponibilizar publicidade.
-</p>
-
-<h3>3. Publicidade</h3>
-
-<p>
-O site poderá utilizar serviços de publicidade de terceiros, incluindo o Google AdSense.
-Esses serviços podem utilizar cookies ou tecnologias semelhantes para exibir anúncios.
-</p>
-
-<h3>4. Links externos</h3>
-
-<p>
-O Novo Games 7 pode apresentar links para sites externos.
-Esses sites possuem suas próprias políticas de privacidade e termos de uso.
-</p>
-
-<h3>5. Segurança</h3>
-
-<p>
-Adotamos medidas razoáveis para manter o site funcionando de maneira segura.
-Entretanto, nenhum serviço disponível na internet pode garantir segurança absoluta.
-</p>
-
-<h3>6. Alterações</h3>
-
-<p>
-Esta Política de Privacidade poderá ser atualizada quando necessário.
-Recomendamos que os visitantes consultem esta página periodicamente.
-</p>
-
-</section>
-
-
-<!-- TERMOS DE USO -->
-<section class="secao" id="termos">
-
-<h2>📜 Termos de Uso</h2>
-
-<p>
-Ao acessar e utilizar o Novo Games 7, você concorda com estes Termos de Uso.
-Caso não concorde com algum dos termos apresentados, recomendamos que não utilize o site.
-</p>
-
-<h3>1. Uso do site</h3>
-
-<p>
-O conteúdo disponibilizado no Novo Games 7 tem finalidade informativa e de entretenimento.
-O usuário é responsável pela utilização das informações apresentadas.
-</p>
-
-<h3>2. Links de terceiros</h3>
-
-<p>
-O Novo Games 7 pode disponibilizar links que direcionam para sites externos.
-Esses sites podem possuir regras, termos e políticas próprias.
-</p>
-
-<p>
-Não controlamos o conteúdo, funcionamento ou disponibilidade de sites de terceiros.
-</p>
-
-<h3>3. Marcas e direitos autorais</h3>
-
-<p>
-Nomes, marcas, logotipos e conteúdos pertencentes a terceiros permanecem de propriedade
-de seus respectivos proprietários.
-</p>
-
-<h3>4. Disponibilidade</h3>
-
-<p>
-Podemos alterar, atualizar ou remover conteúdos do site a qualquer momento.
-</p>
-
-<h3>5. Responsabilidade</h3>
-
-<p>
-O Novo Games 7 não garante que todos os conteúdos ou links externos permanecerão disponíveis
-ou funcionarão continuamente.
-</p>
-
-<h3>6. Alterações dos termos</h3>
-
-<p>
-Estes Termos de Uso podem ser atualizados sempre que necessário.
-A versão publicada nesta página será considerada a versão vigente.
-</p>
-
-</section>
-
-
-<!-- AVISO -->
-<section class="secao">
-
-<h2>⚠️ Aviso</h2>
-
-<p>
-O Novo Games 7 não é afiliado, patrocinado ou oficialmente associado aos fabricantes
-ou proprietários dos jogos mencionados no site, salvo quando expressamente informado.
-</p>
-
-<p>
-Os nomes, marcas e logotipos utilizados pertencem aos seus respectivos proprietários.
-</p>
-
-</section>
-
-
-<!-- ANÚNCIO -->
-<div class="anuncio">
-    ESPAÇO PARA ANÚNCIO
-</div>
-
-
-<!-- RODAPÉ -->
-<footer>
-
-<p>
-<strong>NOVO GAMES 7</strong>
-</p>
-
-<p>
-
-<a href="#inicio">Início</a>
-
-<a href="#sobre">Sobre Nós</a>
-
-<a href="#contato">Contato</a>
-
-<a href="#privacidade">Política de Privacidade</a>
-
-<a href="#termos">Termos de Uso</a>
-
-</p>
-
-<p>
-© 2026 Novo Games 7 — Todos os direitos reservados.
-</p>
-
-</footer>
-
-
-<!-- TELA DE ESPERA -->
-<div id="espera">
-
-    <div class="caixa">
-
-        <h2>🎮 PREPARANDO SEU JOGO</h2>
-
-        <p>Aguarde alguns segundos...</p>
-
-        <div id="contador">
-            10
-        </div>
-
-        <a id="continuar"
-           class="continuar"
-           href="#"
-           target="_blank"
-           rel="noopener noreferrer">
-
-           CONTINUAR PARA O JOGO 🚀
-
-        </a>
-
-        <a href="#"
-           class="voltar"
-           onclick="fecharEspera()">
-
-           ← Voltar para os jogos
-
-        </a>
-
-    </div>
-
-</div>
-
-
-<script>
-
-let linkDoJogo = "";
-let tempo = 10;
-let intervalo;
-
-
-/* ABRIR JOGO */
-function abrirJogo(link){
-
-    event.preventDefault();
-
-    linkDoJogo = link;
-
-    tempo = 10;
-
-    document.getElementById("espera").style.display = "block";
-
-    document.getElementById("contador").textContent = tempo;
-
-    document.getElementById("continuar").style.display = "none";
-
-    clearInterval(intervalo);
-
-    intervalo = setInterval(function(){
-
-        tempo--;
-
-        document.getElementById("contador").textContent = tempo;
-
-        if(tempo <= 0){
-
-            clearInterval(intervalo);
-
-            document.getElementById("contador").textContent = "✓";
-
-            document.getElementById("continuar").style.display = "block";
-
-            document.getElementById("continuar").href = linkDoJogo;
-
+    <p id="mensagem">Seu jogo será aberto em instantes.</p>
+
+    <a class="back" href="links.html">← Voltar para os jogos</a>
+
+    <p class="notice">
+      Zika Games 7 — Jogos mobile para Android
+    </p>
+  </main>
+
+  <script>
+    /*
+      IMPORTANTE:
+      Troque o endereço abaixo pelo link verdadeiro do jogo.
+    */
+    const parametros = new URLSearchParams(window.location.search);
+    const destino = parametros.get("url");
+
+    let tempo = 10;
+
+    const contador = document.getElementById("contador");
+    const barra = document.getElementById("barra");
+    const mensagem = document.getElementById("mensagem");
+
+    const intervalo = setInterval(function () {
+      tempo--;
+      contador.textContent = tempo;
+      barra.style.width = ((10 - tempo) * 10) + "%";
+
+      if (tempo <= 0) {
+        clearInterval(intervalo);
+        contador.textContent = "✓";
+        barra.style.width = "100%";
+
+        if (destino) {
+          try {
+            const link = new URL(destino);
+
+            if (link.protocol === "https:" || link.protocol === "http:") {
+              mensagem.textContent = "Abrindo seu jogo...";
+              window.location.href = link.href;
+              return;
+            }
+          } catch (erro) {
+            // Mantém a página aberta se o endereço não for válido.
+          }
         }
 
-    },1000);
-}
-
-
-/* FECHAR ESPERA */
-function fecharEspera(){
-
-    event.preventDefault();
-
-    clearInterval(intervalo);
-
-    document.getElementById("espera").style.display = "none";
-
-}
-
-</script>
-
+        mensagem.textContent = "Não foi possível localizar o jogo. Volte e tente novamente.";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
