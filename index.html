@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preparando seu jogo | Zika Games 7</title>
-  <meta name="description" content="Aguarde alguns segundos enquanto preparamos seu jogo no Zika Games 7.">
+  <title>Novo Games 7 - Jogos Mobile</title>
+  <meta name="description" content="Novo Games 7: descubra jogos mobile, futebol, mundo aberto, novidades e jogos para Android.">
+  <meta name="theme-color" content="#080d18">
+
   <style>
     * {
       box-sizing: border-box;
@@ -12,172 +14,294 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      background: radial-gradient(circle at top, #102b49, #05080e 70%);
-      color: #fff;
       font-family: Arial, sans-serif;
+      color: #fff;
+      background: #080d18;
     }
 
-    .container {
-      width: 100%;
-      max-width: 520px;
+    header {
       text-align: center;
-      padding: 28px 20px;
-      background: #101c2c;
-      border: 1px solid #168bff;
-      border-radius: 20px;
-      box-shadow: 0 0 25px #087bff55;
+      padding: 28px 15px 20px;
+      background: linear-gradient(135deg, #101e38, #07101e);
+      border-bottom: 1px solid #18395b;
     }
 
-    h1 {
+    header h1 {
+      margin: 0;
       color: #16c8ff;
-      font-size: 27px;
-      margin: 0 0 15px;
+      font-size: clamp(26px, 5vw, 38px);
     }
 
-    .subtitle {
-      font-size: 17px;
-      color: #ddd;
-      margin-bottom: 20px;
+    header p {
+      color: #cbd8e8;
+      margin-bottom: 0;
     }
 
-    .ad-space {
-      width: 100%;
-      min-height: 120px;
-      margin: 22px auto;
-      padding: 20px 10px;
+    nav {
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      gap: 10px;
-      border: 2px dashed #536579;
-      border-radius: 12px;
-      background: #0a1320;
-      color: #aebdce;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 15px;
+      background: #0b1423;
     }
 
-    .ad-space strong {
-      color: #ffd166;
+    nav a {
+      color: white;
+      text-decoration: none;
+      background: #172943;
+      border: 1px solid #24466d;
+      border-radius: 10px;
+      padding: 11px 14px;
       font-size: 14px;
     }
 
-    .ad-space span {
-      font-size: 13px;
+    .container {
+      width: min(1100px, 94%);
+      margin: auto;
     }
 
-    #contador {
-      font-size: 68px;
-      font-weight: bold;
-      color: #fff;
-      margin: 20px 0;
+    .ad-space {
+      min-height: 100px;
+      margin: 20px auto;
+      padding: 20px 10px;
+      border: 1px dashed #64748b;
+      border-radius: 10px;
+      background: #101a2a;
+      color: #aab9cb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 7px;
     }
 
-    .progress {
-      height: 8px;
-      background: #26384c;
-      border-radius: 20px;
-      overflow: hidden;
-      margin: 20px 0;
+    .ad-space strong {
+      color: #ffc857;
+      font-size: 14px;
     }
 
-    .progress-bar {
-      width: 0%;
-      height: 100%;
-      background: #16c8ff;
-      transition: width 1s linear;
-    }
-
-    .back {
-      display: inline-block;
-      margin-top: 12px;
-      color: #b9dfff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .back:hover {
+    .section-title {
+      margin: 28px 0 18px;
+      text-align: center;
       color: #16c8ff;
     }
 
-    .notice {
-      color: #aebdce;
+    .games {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      padding-bottom: 25px;
+    }
+
+    .game-card {
+      background: linear-gradient(145deg, #14243a, #0d1727);
+      border: 1px solid #263f5d;
+      border-radius: 15px;
+      padding: 13px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px #0005;
+    }
+
+    .game-card img {
+      display: block;
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #1a293d;
+    }
+
+    .game-card h3 {
+      color: #fff;
+      margin: 14px 0 8px;
+      font-size: 19px;
+    }
+
+    .description {
+      color: #c5d2e2;
+      line-height: 1.55;
+      font-size: 14px;
+      min-height: 65px;
+    }
+
+    .game-ad {
+      min-height: 75px;
+      margin: 14px 0;
+      padding: 12px 8px;
+      border: 1px dashed #64748b;
+      border-radius: 8px;
+      text-align: center;
+      color: #9eafc2;
       font-size: 12px;
-      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0a1321;
+    }
+
+    .game-button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      color: #00121b;
+      background: linear-gradient(90deg, #00c8ff, #08a8e8);
+      border-radius: 9px;
+      padding: 15px 10px;
+      margin-top: 10px;
+    }
+
+    .game-button:hover {
+      filter: brightness(1.12);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px 12px;
+      color: #aab9cb;
+      border-top: 1px solid #20344d;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #16c8ff;
+      margin: 5px 8px;
+      display: inline-block;
+    }
+
+    @media (max-width: 600px) {
+      .games {
+        grid-template-columns: 1fr;
+      }
+
+      .game-card img {
+        height: 220px;
+      }
+
+      .description {
+        min-height: 0;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
-    <h1>🎮 PREPARANDO SEU JOGO</h1>
-    <p class="subtitle">Aguarde alguns segundos...</p>
+  <header id="inicio">
+    <h1>🎮 NOVO GAMES 7</h1>
+    <p>Os melhores jogos para Android</p>
+  </header>
 
+  <nav>
+    <a href="#inicio">🏠 Início</a>
+    <a href="#jogos">🎮 Jogos</a>
+    <a href="sobre.html">ℹ️ Sobre nós</a>
+    <a href="contato.html">📩 Contato</a>
+    <a href="privacidade.html">🔒 Privacidade</a>
+    <a href="termos.html">📋 Termos</a>
+  </nav>
+
+  <main class="container">
     <div class="ad-space">
       <strong>📢 ESPAÇO PARA ANÚNCIO</strong>
       <span>Área reservada para publicidade</span>
     </div>
 
-    <div id="contador">10</div>
+    <h2 class="section-title" id="jogos">🔥 DESCUBRA SEU PRÓXIMO JOGO</h2>
 
-    <div class="progress">
-      <div class="progress-bar" id="barra"></div>
+    <section class="games">
+      <article class="game-card">
+        <img src="jogo-1.jpg" alt="Imagem do DFL 2026">
+        <h3>⚽ DFL 2026</h3>
+        <p class="description">
+          Curte futebol no celular? Conheça esta opção de jogo de futebol
+          para Android e confira os detalhes antes de baixar.
+        </p>
+        <div class="game-ad">📢 Espaço reservado para anúncio</div>
+        <a class="game-button"
+           href="https://www.mediafire.com/file/lvwxo5nwccxe8yr/"
+           target="_blank" rel="noopener noreferrer">VER JOGO</a>
+      </article>
+
+      <article class="game-card">
+        <img src="jogo-2.jpg" alt="Imagem do GTA Motovlog">
+        <h3>🏍️ GTA MOTOVLOG</h3>
+        <p class="description">
+          Explore uma experiência de mundo aberto com motos, cidade e
+          aventuras. Veja os detalhes do jogo no link.
+        </p>
+        <div class="game-ad">📢 Espaço reservado para anúncio</div>
+        <a class="game-button"
+           href="https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1"
+           target="_blank" rel="noopener noreferrer">VER JOGO</a>
+      </article>
+
+      <article class="game-card">
+        <img src="jogo-3.jpg" alt="Imagem do jogo de mundo aberto">
+        <h3>🌎 MUNDO ABERTO</h3>
+        <p class="description">
+          Gosta de explorar mapas e descobrir novas possibilidades?
+          Confira esta opção de jogo mobile para Android.
+        </p>
+        <div class="game-ad">📢 Espaço reservado para anúncio</div>
+        <a class="game-button"
+           href="https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1"
+           target="_blank" rel="noopener noreferrer">VER JOGO</a>
+      </article>
+
+      <article class="game-card">
+        <img src="jogo-4.jpg" alt="Imagem do jogo de futsal 2026">
+        <h3>🥅 FUTSAL 2026</h3>
+        <p class="description">
+          Para quem gosta de futebol de salão e partidas cheias de emoção.
+          Confira as informações disponíveis no link.
+        </p>
+        <div class="game-ad">📢 Espaço reservado para anúncio</div>
+        <a class="game-button"
+           href="https://www.mediafire.com/file_premium/lt86zuik9u2k842/"
+           target="_blank" rel="noopener noreferrer">VER JOGO</a>
+      </article>
+
+      <article class="game-card">
+        <img src="jogo-5.jpg" alt="Imagem do EAFC 2026 Android">
+        <h3>🏆 EAFC 2026 ANDROID</h3>
+        <p class="description">
+          Confira esta opção de futebol para celular e veja as informações
+          sobre o arquivo e a compatibilidade antes de baixar.
+        </p>
+        <div class="game-ad">📢 Espaço reservado para anúncio</div>
+        <a class="game-button"
+           href="https://www.mediafire.com/file/lvwxo5nwccxe8yr/"
+           target="_blank" rel="noopener noreferrer">VER JOGO</a>
+      </article>
+
+      <article class="game-card">
+        <img src="jogo-6.jpg" alt="Imagem do sexto jogo">
+        <h3>🎮 JOGO MOBILE</h3>
+        <p class="description">
+          Mais uma opção para quem procura jogos para Android.
+          Acesse o link para conferir os detalhes deste jogo.
+        </p>
+        <div class="game-ad">📢 Espaço reservado para anúncio</div>
+        <a class="game-button"
+           href="#jogos">VER JOGO</a>
+      </article>
+    </section>
+
+    <div class="ad-space">
+      <strong>📢 ESPAÇO PARA ANÚNCIO</strong>
+      <span>Área reservada para publicidade no final da lista</span>
     </div>
-
-    <p id="mensagem">Seu jogo será aberto em instantes.</p>
-
-    <a class="back" href="links.html">← Voltar para os jogos</a>
-
-    <p class="notice">
-      Zika Games 7 — Jogos mobile para Android
-    </p>
   </main>
 
-  <script>
-    /*
-      IMPORTANTE:
-      Troque o endereço abaixo pelo link verdadeiro do jogo.
-    */
-    const parametros = new URLSearchParams(window.location.search);
-    const destino = parametros.get("url");
-
-    let tempo = 10;
-
-    const contador = document.getElementById("contador");
-    const barra = document.getElementById("barra");
-    const mensagem = document.getElementById("mensagem");
-
-    const intervalo = setInterval(function () {
-      tempo--;
-      contador.textContent = tempo;
-      barra.style.width = ((10 - tempo) * 10) + "%";
-
-      if (tempo <= 0) {
-        clearInterval(intervalo);
-        contador.textContent = "✓";
-        barra.style.width = "100%";
-
-        if (destino) {
-          try {
-            const link = new URL(destino);
-
-            if (link.protocol === "https:" || link.protocol === "http:") {
-              mensagem.textContent = "Abrindo seu jogo...";
-              window.location.href = link.href;
-              return;
-            }
-          } catch (erro) {
-            // Mantém a página aberta se o endereço não for válido.
-          }
-        }
-
-        mensagem.textContent = "Não foi possível localizar o jogo. Volte e tente novamente.";
-      }
-    }, 1000);
-  </script>
+  <footer>
+    <p>© 2026 Novo Games 7 — Jogos mobile para Android.</p>
+    <a href="sobre.html">Sobre nós</a>
+    <a href="contato.html">Contato</a>
+    <a href="privacidade.html">Política de Privacidade</a>
+    <a href="termos.html">Termos de Uso</a>
+  </footer>
 </body>
 </html>
