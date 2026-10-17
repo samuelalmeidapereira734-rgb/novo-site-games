@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preparando seu jogo | Zika Games 7</title>
+  <meta name="description" content="Aguarde alguns segundos enquanto preparamos seu jogo no Zika Games 7.">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      background: radial-gradient(circle at top, #102b49, #05080e 70%);
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      text-align: center;
+      padding: 28px 20px;
+      background: #101c2c;
+      border: 1px solid #168bff;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #087bff55;
+    }
+
+    h1 {
+      color: #16c8ff;
+      font-size: 27px;
+      margin: 0 0 15px;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    .ad-space {
+      width: 100%;
+      min-height: 120px;
+      margin: 22px auto;
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border: 2px dashed #536579;
+      border-radius: 12px;
+      background: #0a1320;
+      color: #aebdce;
+    }
+
+    .ad-space strong {
+      color: #ffd166;
+      font-size: 14px;
+    }
+
+    .ad-space span {
+      font-size: 13px;
+    }
+
+    #contador {
+      font-size: 68px;
+      font-weight: bold;
+      color: #fff;
+      margin: 20px 0;
+    }
+
+    .progress {
+      height: 8px;
+      background: #26384c;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: #16c8ff;
+      transition: width 1s linear;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 12px;
+      color: #b9dfff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back:hover {
+      color: #16c8ff;
+    }
+
+    .notice {
+      color: #aebdce;
+      font-size: 12px;
+      margin-top: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1>🎮 PREPARANDO SEU JOGO</h1>
+    <p class="subtitle">Aguarde alguns segundos...</p>
+
+    <div class="ad-space">
+      <strong>📢 ESPAÇO PARA ANÚNCIO</strong>
+      <span>Área reservada para publicidade</span>
+    </div>
+
+    <div id="contador">10</div>
+
+    <div class="progress">
+      <div class="progress-bar" id="barra"></div>
+    </div>
+
+    <p id="mensagem">Seu jogo será aberto em instantes.</p>
+
+    <a class="back" href="links.html">← Voltar para os jogos</a>
+
+    <p class="notice">
+      Zika Games 7 — Jogos mobile para Android
+    </p>
+  </main>
+
+  <script>
+    /*
+      IMPORTANTE:
+      Troque o endereço abaixo pelo link verdadeiro do jogo.
+    */
+    const parametros = new URLSearchParams(window.location.search);
+    const destino = parametros.get("url");
+
+    let tempo = 10;
+
+    const contador = document.getElementById("contador");
+    const barra = document.getElementById("barra");
+    const mensagem = document.getElementById("mensagem");
+
+    const intervalo = setInterval(function () {
+      tempo--;
+      contador.textContent = tempo;
+      barra.style.width = ((10 - tempo) * 10) + "%";
+
+      if (tempo <= 0) {
+        clearInterval(intervalo);
+        contador.textContent = "✓";
+        barra.style.width = "100%";
+
+        if (destino) {
+          try {
+            const link = new URL(destino);
+
+            if (link.protocol === "https:" || link.protocol === "http:") {
+              mensagem.textContent = "Abrindo seu jogo...";
+              window.location.href = link.href;
+              return;
+            }
+          } catch (erro) {
+            // Mantém a página aberta se o endereço não for válido.
+          }
+        }
+
+        mensagem.textContent = "Não foi possível localizar o jogo. Volte e tente novamente.";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
