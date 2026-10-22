@@ -4,61 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Novo Games 7 - Jogos Mobile</title>
-<meta name="description" content="Novo Games 7: novidades, informações e conteúdos sobre jogos para celular Android.">
-<meta name="theme-color" content="#080d18">
+<meta name="description" content="Novo Games 7: novidades, informações e conteúdos sobre jogos mobile.">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#080d18;color:#fff;line-height:1.7}
-a{color:#52cfff}
-header{background:#0d1728;padding:24px 15px;text-align:center;border-bottom:2px solid #17446b}
+header{text-align:center;background:#101c30;padding:24px 12px}
 .logo{font-size:28px;font-weight:bold;color:#35cfff}
-header p{color:#bdcadb;font-size:14px}
-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;padding:15px;background:#101c30}
-nav a{font-size:14px;text-decoration:none}
-nav a:hover,footer a:hover{color:#fff;text-decoration:underline}
-.hero{max-width:1000px;margin:auto;padding:35px 18px;text-align:center}
-.hero h1{font-size:clamp(27px,5vw,40px);line-height:1.3;margin-bottom:12px}
+header p{color:#c0cede}
+nav,.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;padding:15px}
+nav{background:#0b1424}
+a{color:#52cfff}
+nav a,footer a{text-decoration:none}
+.hero{text-align:center;padding:35px 18px;max-width:850px;margin:auto}
+.hero h1{font-size:32px;margin-bottom:12px}
 .hero h1 span{color:#35cfff}
-.hero p{color:#c0cede;max-width:750px;margin:auto}
-.ad{max-width:970px;width:calc(100% - 30px);min-height:90px;margin:22px auto;border:1px dashed #61758e;border-radius:10px;background:#101c2b;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;color:#b6c5d8;font-size:13px}
-.ad strong{color:#ffc857;font-size:15px}
-h2.section-title{max-width:1000px;margin:30px auto 18px;padding:0 15px;font-size:24px}
-.section-title span{color:#35cfff}
+.hero p,.description{color:#c0cede}
+.ad{width:calc(100% - 30px);max-width:970px;min-height:90px;margin:22px auto;padding:15px;border:1px dashed #61758e;border-radius:10px;background:#101c2b;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#bdcadb;font-size:13px}
+.ad strong{color:#ffc857}
+h2.section-title{max-width:1000px;margin:25px auto 18px;padding:0 15px}
 .games{max-width:1000px;margin:auto;padding:0 15px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .card{background:#101c2e;border:1px solid #283e59;border-radius:13px;overflow:hidden}
 .card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#17243a}
 .content{padding:17px}
-.tag{display:inline-block;background:#123a59;color:#75d5ff;border-radius:5px;padding:3px 8px;font-size:12px;margin-bottom:8px}
+.tag{display:inline-block;background:#123a59;color:#75d5ff;padding:3px 8px;border-radius:5px;font-size:12px;margin-bottom:8px}
 .content h3{font-size:20px;margin-bottom:8px}
-.content p{font-size:14px;color:#c0cede}
+.description{font-size:14px;margin-bottom:15px}
+.game-link{display:block;text-align:center;background:#08bfe5;color:#061421;font-weight:bold;padding:12px;border-radius:7px;text-decoration:none}
+.game-link:hover{background:#72e5ff}
 .ad-small{margin:15px 12px;min-height:75px}
 .about{max-width:970px;margin:30px auto;padding:23px;background:#101c2e;border:1px solid #283e59;border-radius:12px}
 .about h2{color:#35cfff;margin-bottom:10px}
-.about p{color:#c0cede;margin-bottom:12px;font-size:14px}
-footer{margin-top:35px;padding:25px 15px;background:#050a12;border-top:1px solid #283e59;text-align:center}
-footer p{font-size:13px;color:#bdcadb;margin-bottom:15px}
-.footer-links{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.footer-links a{font-size:13px}
-.page{display:none;max-width:800px;margin:30px auto;padding:25px;background:#101c2e;border:1px solid #283e59;border-radius:12px}
+.about p{color:#c0cede;margin-bottom:12px}
+.page{display:none;max-width:800px;margin:25px auto;padding:24px;background:#101c2e;border-radius:12px}
 .page:target{display:block}
-body:has(.page:target) #inicio,
-body:has(.page:target) #jogos,
-body:has(.page:target) #sobre,
-body:has(.page:target) .ad,
-body:has(.page:target) .games{display:none}
+body:has(.page:target) main,
+body:has(.page:target) .top-ad{display:none}
 .page h1,.page h2{color:#35cfff;margin:12px 0}
-.page p,.page li{color:#d0dbea;margin-bottom:12px}
-.page ul{padding-left:22px}
-.back{display:inline-block;margin-top:20px;background:#123a59;padding:10px 15px;border-radius:7px;text-decoration:none}
-@media(max-width:600px){.games{grid-template-columns:1fr}.hero{padding:25px 16px}.content h3{font-size:19px}.page{margin:20px 15px;padding:18px}}
+.page p{margin-bottom:12px;color:#d0dbea}
+.back{display:inline-block;margin-top:15px;padding:10px 14px;background:#123a59;border-radius:7px;text-decoration:none}
+footer{margin-top:35px;padding:25px 12px;background:#050a12;text-align:center;border-top:1px solid #283e59}
+footer p{color:#bdcadb;font-size:13px}
+@media(max-width:600px){.games{grid-template-columns:1fr}.hero h1{font-size:27px}.page{margin:20px 12px}}
 </style>
 </head>
 
 <body>
 <header>
   <div class="logo">🎮 NOVO GAMES 7</div>
-  <p>Seu portal de informações sobre jogos mobile</p>
+  <p>Informações e novidades sobre jogos mobile</p>
 </header>
 
 <nav>
@@ -68,139 +62,140 @@ body:has(.page:target) .games{display:none}
   <a href="#contato">Contato</a>
 </nav>
 
-<div class="ad">
-  <strong>📢 ESPAÇO PARA ANÚNCIO</strong>
-  <span>Área reservada para publicidade</span>
+<div class="ad top-ad">
+  <strong>ESPAÇO RESERVADO PARA ANÚNCIO</strong>
+  <span>Área superior da página</span>
 </div>
 
-<main id="inicio">
-  <section class="hero">
-    <h1>Descubra os melhores <span>jogos mobile!</span></h1>
-    <p>
-      Bem-vindo ao Novo Games 7! Aqui você encontra informações sobre
-      jogos de futebol, mundo aberto, motos e outras experiências para
-      celulares Android. Conheça os títulos em destaque e acompanhe
-      novidades do universo dos games mobile.
-    </p>
-  </section>
+<main>
+<section class="hero">
+  <h1>Descubra os melhores <span>jogos mobile!</span></h1>
+  <p>
+    Confira informações sobre jogos de futebol, mundo aberto e outras
+    experiências para celular. Leia as descrições, conheça as
+    características de cada título e verifique a compatibilidade
+    antes de instalar qualquer aplicativo.
+  </p>
+</section>
 
-  <h2 class="section-title" id="jogos">🎯 Jogos em <span>destaque</span></h2>
+<h2 class="section-title" id="jogos">🎯 Jogos em destaque</h2>
 
-  <section class="games">
-    <article class="card">
-      <img src="jogo-1.jpg" alt="Imagem do DFL 2026">
-      <div class="content">
-        <span class="tag">⚽ Futebol mobile</span>
-        <h3>DFL 2026</h3>
-        <p>Conheça esta opção para fãs de futebol no celular. Confira as características divulgadas, a jogabilidade e os requisitos do jogo. A experiência pode variar conforme a versão e o dispositivo utilizado.</p>
-      </div>
-      <div class="ad ad-small"><strong>📢 ESPAÇO PARA ANÚNCIO</strong><span>Área reservada para publicidade</span></div>
-    </article>
+<section class="games">
 
-    <article class="card">
-      <img src="jogo-2.jpg" alt="Imagem do GTA Motovlog">
-      <div class="content">
-        <span class="tag">🏍️ Mundo aberto</span>
-        <h3>GTA Motovlog</h3>
-        <p>Uma opção para quem gosta de motos, cenários urbanos e exploração. Conheça a proposta do conteúdo, veja as informações disponíveis e verifique os requisitos para saber se é compatível com seu aparelho.</p>
-      </div>
-      <div class="ad ad-small"><strong>📢 ESPAÇO PARA ANÚNCIO</strong><span>Área reservada para publicidade</span></div>
-    </article>
-
-    <article class="card">
-      <img src="jogo-3.jpg" alt="Imagem de jogo de mundo aberto">
-      <div class="content">
-        <span class="tag">🌎 Exploração</span>
-        <h3>Jogo de Mundo Aberto</h3>
-        <p>Explore informações sobre jogos que oferecem ambientes amplos e liberdade para descobrir diferentes cenários. Confira as características de cada versão e procure sempre informações confiáveis sobre compatibilidade e segurança.</p>
-      </div>
-      <div class="ad ad-small"><strong>📢 ESPAÇO PARA ANÚNCIO</strong><span>Área reservada para publicidade</span></div>
-    </article>
-
-    <article class="card">
-      <img src="jogo-4.jpg" alt="Imagem do jogo de futsal 2026">
-      <div class="content">
-        <span class="tag">🥅 Futsal</span>
-        <h3>Jogo de Futsal 2026</h3>
-        <p>Para quem gosta de partidas de futsal e futebol no celular. Confira as informações sobre os times, os recursos e a versão disponível. Verifique os requisitos antes de instalar qualquer aplicativo.</p>
-      </div>
-      <div class="ad ad-small"><strong>📢 ESPAÇO PARA ANÚNCIO</strong><span>Área reservada para publicidade</span></div>
-    </article>
-
-    <article class="card">
-      <img src="jogo-5.jpg" alt="Imagem do EAFC 2026 Android">
-      <div class="content">
-        <span class="tag">🏆 Futebol</span>
-        <h3>EAFC 2026 Android</h3>
-        <p>Conheça conteúdos relacionados ao futebol mobile e veja as informações divulgadas sobre esta versão. Antes de instalar arquivos, confirme a origem e a compatibilidade com seu dispositivo.</p>
-      </div>
-      <div class="ad ad-small"><strong>📢 ESPAÇO PARA ANÚNCIO</strong><span>Área reservada para publicidade</span></div>
-    </article>
-
-    <article class="card">
-      <img src="jogo-6.jpg" alt="Imagem de jogo mobile em destaque">
-      <div class="content">
-        <span class="tag">🎮 Jogos mobile</span>
-        <h3>Jogo Mobile em Destaque</h3>
-        <p>Este espaço apresenta mais um título do universo mobile. A página poderá receber novas informações sobre o jogo, seus recursos, requisitos e características em futuras atualizações.</p>
-      </div>
-      <div class="ad ad-small"><strong>📢 ESPAÇO PARA ANÚNCIO</strong><span>Área reservada para publicidade</span></div>
-    </article>
-  </section>
-
-  <section class="about" id="sobre">
-    <h2>Sobre o Novo Games 7</h2>
-    <p>O Novo Games 7 é um portal dedicado a informações sobre jogos para celulares, incluindo futebol mobile, mundo aberto e novidades do universo gamer.</p>
-    <p>Nosso objetivo é apresentar descrições e informações úteis para ajudar os visitantes a conhecer diferentes jogos e suas características.</p>
-    <p>Procuramos melhorar o conteúdo e a navegação do site para oferecer uma experiência simples e informativa.</p>
-  </section>
-
-  <div class="ad">
-    <strong>📢 ESPAÇO PARA ANÚNCIO</strong>
-    <span>Área reservada para publicidade no final da página</span>
+<article class="card">
+  <img src="jogo-1.jpg" alt="DFL 2026" loading="lazy">
+  <div class="content">
+    <span class="tag">⚽ Futebol mobile</span>
+    <h3>DFL 2026</h3>
+    <p class="description">Conteúdo para fãs de futebol mobile. Conheça a proposta do jogo, confira as características da versão divulgada e verifique os requisitos do aparelho antes de instalar.</p>
+    <a class="game-link" href="https://www.mediafire.com/file/lvwxo5nwccxe8yr/" target="_blank" rel="noopener noreferrer">Ver jogo</a>
   </div>
+  <div class="ad ad-small"><strong>ESPAÇO PARA ANÚNCIO</strong><span>Área reservada</span></div>
+</article>
+
+<article class="card">
+  <img src="jogo-2.jpg" alt="GTA Motovlog" loading="lazy">
+  <div class="content">
+    <span class="tag">🏍️ Mundo aberto</span>
+    <h3>GTA Motovlog</h3>
+    <p class="description">Uma opção para quem gosta de motos, cenários urbanos e exploração. Confira as informações da versão apresentada e leia os detalhes da página de origem.</p>
+    <a class="game-link" href="https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1" target="_blank" rel="noopener noreferrer">Ver informações do jogo</a>
+  </div>
+  <div class="ad ad-small"><strong>ESPAÇO PARA ANÚNCIO</strong><span>Área reservada</span></div>
+</article>
+
+<article class="card">
+  <img src="jogo-3.jpg" alt="Jogo de mundo aberto" loading="lazy">
+  <div class="content">
+    <span class="tag">🌎 Exploração</span>
+    <h3>Jogo de Mundo Aberto</h3>
+    <p class="description">Conheça uma opção para quem gosta de explorar ambientes virtuais e descobrir diferentes cenários. Consulte os detalhes e requisitos apresentados na página de origem.</p>
+    <a class="game-link" href="https://zcarlostm.blogspot.com/2026/03/gta-modificado-sp-sabor-gta-rp.html?m=1" target="_blank" rel="noopener noreferrer">Ver informações do jogo</a>
+  </div>
+  <div class="ad ad-small"><strong>ESPAÇO PARA ANÚNCIO</strong><span>Área reservada</span></div>
+</article>
+
+<article class="card">
+  <img src="jogo-4.jpg" alt="Jogo de futsal 2026" loading="lazy">
+  <div class="content">
+    <span class="tag">🥅 Futsal</span>
+    <h3>Jogo de Futsal 2026</h3>
+    <p class="description">Para quem acompanha futebol e futsal no celular. Confira as informações da versão divulgada, os requisitos e a compatibilidade com seu dispositivo.</p>
+    <a class="game-link" href="https://www.mediafire.com/file_premium/lt86zuik9u2k842/" target="_blank" rel="noopener noreferrer">Ver arquivo informado</a>
+  </div>
+  <div class="ad ad-small"><strong>ESPAÇO PARA ANÚNCIO</strong><span>Área reservada</span></div>
+</article>
+
+<article class="card">
+  <img src="jogo-5.jpg" alt="EAFC 2026 Android" loading="lazy">
+  <div class="content">
+    <span class="tag">🏆 Futebol</span>
+    <h3>EAFC 2026 Android</h3>
+    <p class="description">Conteúdo para fãs de futebol no Android. Consulte os detalhes da versão, confira os requisitos e verifique se a fonte do arquivo é confiável antes de instalar.</p>
+    <a class="game-link" href="https://www.mediafire.com/file/lvwxo5nwccxe8yr/" target="_blank" rel="noopener noreferrer">Ver arquivo informado</a>
+  </div>
+  <div class="ad ad-small"><strong>ESPAÇO PARA ANÚNCIO</strong><span>Área reservada</span></div>
+</article>
+
+<article class="card">
+  <img src="jogo-6.jpg" alt="Outro jogo mobile" loading="lazy">
+  <div class="content">
+    <span class="tag">🎮 Mobile</span>
+    <h3>Outro jogo mobile</h3>
+    <p class="description">Espaço para apresentar outro jogo, com informações sobre seus recursos, requisitos e compatibilidade. O título e o endereço podem ser atualizados quando os dados estiverem disponíveis.</p>
+    <span class="game-link">Link ainda não informado</span>
+  </div>
+  <div class="ad ad-small"><strong>ESPAÇO PARA ANÚNCIO</strong><span>Área reservada</span></div>
+</article>
+
+</section>
+
+<section class="about" id="sobre">
+  <h2>Sobre o Novo Games 7</h2>
+  <p>O Novo Games 7 publica informações sobre jogos para celulares, incluindo futebol mobile, exploração e novidades do universo gamer.</p>
+  <p>Nosso objetivo é ajudar os visitantes a conhecer diferentes títulos por meio de descrições e informações úteis.</p>
+  <p>As versões e os requisitos dos jogos podem mudar. Confira sempre a origem dos arquivos e a compatibilidade com seu aparelho.</p>
+</section>
+
+<div class="ad">
+  <strong>ESPAÇO RESERVADO PARA ANÚNCIO</strong>
+  <span>Área inferior da página</span>
+</div>
 </main>
 
-<!-- PÁGINA DE CONTATO DENTRO DESTE MESMO ARQUIVO -->
 <section class="page" id="contato">
   <h1>Contato</h1>
-  <p>Você pode entrar em contato com o Novo Games 7 para enviar dúvidas, sugestões ou comunicar algum erro no conteúdo.</p>
-  <p>E-mail: <a href="mailto:blogtech.info6@gmail.com">blogtech.info6@gmail.com</a></p>
-  <a class="back" href="index.html">← Voltar ao início</a>
+  <p>Para dúvidas, sugestões ou correções sobre o conteúdo, entre em contato pelo e-mail:</p>
+  <p><a href="mailto:blogtech.info6@gmail.com">blogtech.info6@gmail.com</a></p>
+  <a class="back" href="index.html">Voltar ao início</a>
 </section>
 
-<!-- POLÍTICA DE PRIVACIDADE DENTRO DESTE MESMO ARQUIVO -->
 <section class="page" id="privacidade">
   <h1>Política de Privacidade</h1>
-  <p>O Novo Games 7 busca respeitar a privacidade dos visitantes. Esta página explica, de forma geral, como informações podem ser utilizadas durante a navegação.</p>
-  <h2>Dados de navegação</h2>
-  <p>O servidor e ferramentas utilizadas pelo site podem processar informações técnicas, como tipo de navegador, páginas acessadas e dados necessários à segurança e ao funcionamento.</p>
+  <p>O Novo Games 7 busca respeitar a privacidade dos visitantes. Informações técnicas de navegação podem ser processadas para segurança e funcionamento do site.</p>
   <h2>Cookies e publicidade</h2>
-  <p>Serviços de terceiros, incluindo o Google quando habilitado, podem utilizar cookies ou tecnologias semelhantes para oferecer e medir publicidade. O uso desses recursos depende das configurações e dos serviços efetivamente instalados.</p>
+  <p>Serviços de terceiros, incluindo o Google quando habilitado, podem utilizar cookies ou tecnologias semelhantes conforme suas próprias políticas e configurações aplicáveis.</p>
   <h2>Links externos</h2>
-  <p>O site pode mencionar serviços externos. As políticas desses serviços são de responsabilidade dos respectivos operadores.</p>
+  <p>O site pode indicar páginas externas. Consulte as políticas e condições dos respectivos serviços.</p>
   <h2>Contato</h2>
-  <p>Para dúvidas sobre privacidade, escreva para blogtech.info6@gmail.com.</p>
-  <a class="back" href="index.html">← Voltar ao início</a>
+  <p>Dúvidas sobre privacidade: blogtech.info6@gmail.com.</p>
+  <a class="back" href="index.html">Voltar ao início</a>
 </section>
 
-<!-- TERMOS DE USO DENTRO DESTE MESMO ARQUIVO -->
 <section class="page" id="termos">
   <h1>Termos de Uso</h1>
-  <p>Ao utilizar o Novo Games 7, o visitante concorda em utilizar o site de forma responsável e respeitar as leis aplicáveis.</p>
-  <h2>Conteúdo</h2>
-  <p>As descrições e informações são fornecidas para fins informativos. Recursos, disponibilidade e requisitos de jogos podem mudar conforme seus desenvolvedores e distribuidores.</p>
-  <h2>Serviços de terceiros</h2>
-  <p>Quando houver referências a sites externos, o visitante deverá consultar as regras e condições desses serviços antes de utilizá-los.</p>
-  <h2>Atualizações</h2>
-  <p>O conteúdo e estes termos podem ser atualizados para refletir mudanças no site.</p>
+  <p>O visitante deve utilizar o Novo Games 7 de forma responsável e respeitar as leis aplicáveis.</p>
+  <h2>Informações</h2>
+  <p>As descrições são informativas. Disponibilidade, requisitos e recursos dos jogos podem mudar conforme seus responsáveis.</p>
+  <h2>Serviços externos</h2>
+  <p>Links para outros sites estão sujeitos às regras e condições de seus respectivos operadores.</p>
   <h2>Contato</h2>
-  <p>Em caso de dúvidas, escreva para blogtech.info6@gmail.com.</p>
-  <a class="back" href="index.html">← Voltar ao início</a>
+  <p>Para dúvidas, escreva para blogtech.info6@gmail.com.</p>
+  <a class="back" href="index.html">Voltar ao início</a>
 </section>
 
 <footer>
-  <p>© 2026 Novo Games 7 — Informações e conteúdos sobre jogos mobile.</p>
+  <p>© 2026 Novo Games 7 — Jogos e informações mobile.</p>
   <div class="footer-links">
     <a href="#sobre">Sobre nós</a>
     <a href="#contato">Contato</a>
